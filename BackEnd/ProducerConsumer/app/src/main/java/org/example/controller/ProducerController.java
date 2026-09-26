@@ -3,6 +3,7 @@ package org.example.controller;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,13 +16,12 @@ import java.util.Properties;
 public class ProducerController {
     private static final String BUY_TOPIC = "buy-course";
     private static final String ENROLL_TOPIC = "enroll-now";
-    private static final String BOOTSTRAP_SERVERS = "172.22.38.113:9092";
 
     private final Producer<String, String> kafkaProducer;
 
-    public ProducerController() {
+    public ProducerController(@Value("${spring.kafka.bootstrap-servers}") String bootstrapServers) {
         Properties props = new Properties();
-        props.put("bootstrap.servers", BOOTSTRAP_SERVERS);
+        props.put("bootstrap.servers", bootstrapServers);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         this.kafkaProducer = new KafkaProducer<>(props);

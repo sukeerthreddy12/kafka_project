@@ -4,3 +4,9 @@
 **/build/
 **/.DS_Store
 **/node_modules/
+.vscode/
+.env
+.env.*
+!.env.example
+**/application-local.properties
+*.log

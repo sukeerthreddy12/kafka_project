@@ -1,0 +1,15 @@
+# Copy values into your environment.
+#
+# Windows PowerShell (this session only):
+#   $env:KAFKA_BOOTSTRAP_SERVERS="YOUR_WSL_IP:9092"
+#
+# Find WSL IP from Ubuntu: hostname -I
+
+spring.kafka.bootstrap-servers=${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+spring.kafka.consumer.group-id=metrics-consumer-group
+
+server.address=0.0.0.0
+server.port=8080
+
+management.endpoints.web.exposure.include=metrics,prometheus
+management.endpoint.prometheus.enabled=true
