@@ -32,7 +32,7 @@ Do not commit IPs, `.env`, `node_modules`, or `build/`. Kafka address comes from
 
 Live dashboard from a working run:
 
-![Grafana dashboard: up, Kafka events, JVM heap, HTTP requests](docs/grafana-dashboard.png)
+<img src="docs/grafana-dashboard.png" alt="Grafana dashboard showing up, Kafka events, JVM heap, and HTTP requests" width="100%" />
 
 | Panel | What it showed | Meaning |
 |---|---|---|
