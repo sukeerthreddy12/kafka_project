@@ -226,4 +226,3 @@ Graphs: **Explore** → run a query → **Add to dashboard**. Do not use dashboa
 
 ## Note on IPs
 
-`.env` is not in git (see `.env.example`). Old commits may still contain a private WSL address. The current tree does not.
