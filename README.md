@@ -19,12 +19,12 @@ This repo is the **app code**. Kafka, Prometheus, and Grafana are installed on t
 ## Repo layout
 
 ```text
-BackEnd/ProducerConsumer/   Spring Boot 3 (Java 21) — producer + consumer + Actuator
+BackEnd/ProducerConsumer/   Spring Boot 3 (Java 25) — producer + consumer + Actuator
 FrontEnd/landing-page/      React landing page
 docs/                       screenshots
 ```
 
-Do not commit IPs, `.env`, `node_modules`, or `build/`. Kafka address comes from an environment variable.
+
 
 ---
 
@@ -59,7 +59,7 @@ Start order: **Kafka → Spring Boot → Prometheus → Grafana**. If the app is
 
 ## Prerequisites
 
-- Java 21
+- Java 25
 - Node.js (for the React app)
 - Kafka 4.x (KRaft, no ZooKeeper) on Ubuntu/WSL, port **9092**
 - Prometheus on Ubuntu, port **9090**
@@ -77,7 +77,7 @@ sudo systemctl status kafka
 Create topics the producer uses:
 
 ```bash
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-arm64   # or your JDK path
+export JAVA_HOME=/usr/lib/jvm/java-25-openjdk-arm64   # or your JDK path
 
 sudo -u kafka env JAVA_HOME=$JAVA_HOME \
   /opt/kafka/bin/kafka-topics.sh --create --if-not-exists \
@@ -224,5 +224,5 @@ Graphs: **Explore** → run a query → **Add to dashboard**. Do not use dashboa
 
 ---
 
-## Note on IPs
+
 
